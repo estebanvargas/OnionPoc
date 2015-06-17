@@ -1,37 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Criteria;
+using Domain.Interfaces.Repositories;
 using Infrastructure.Data.Entities;
 using Trintech.Cadency.DataAccess.Core;
+using Trintech.Cadency.Utility;
+using Trintech.Cadency.Utility.Exceptions;
+using MyDomain = Domain.Models;
 
 namespace Infrastructure.Data.Repositories
 {
-    public class EntityRepository
+    public class EntityRepository : Repository, IEntityRepository
     {
         const string FUNCTION_NAME = "dbo.fnGetEntityList";
 
-        public IReadOnlyList<Entity> GetEntityListTable(EntityCriteria criteria)
+        public EntityRepository(ITrintechExceptionManager exceptionManager)
+            : base(exceptionManager)
         {
-            IReadOnlyList<Entity> entities = null;
+        }
 
-            try
+        public IReadOnlyList<MyDomain.Entity> GetEntityList(EntityCriteria criteria)
+        {
+            if (criteria == null)
             {
-                if (criteria == null)
-                {
-                    //initialize criteria
-                }
-
-                entities = CadencyOrm.GetByFunction<Entity>(FUNCTION_NAME, new Dictionary<string, object>());
-            }
-            catch (Exception ex)
-            {
-                //
+                throw new ArgumentNullException("criteria");
             }
 
-            return entities;
+            var parameters = new Dictionary<string, object>
+                    {
+                        {"@userName", criteria.UserName},
+                        {"@closePeriodId", criteria.ClosePeriodId},
+                        {"@closeDayMapId", criteria.CloseDayMapId},
+                        {"@periodEndDate", criteria.PeriodEndDate}
+                    };
+
+            return this.WrapFuncWithExceptionLogging(() =>
+            {
+                IReadOnlyList<Entity> entities = CadencyOrm.GetByFunction<Entity>(FUNCTION_NAME, parameters);
+                var dom = TrintechObjectMapper.Map<Entity, MyDomain.Entity>(entities);
+                return dom;
+            });
         }
     }
 }

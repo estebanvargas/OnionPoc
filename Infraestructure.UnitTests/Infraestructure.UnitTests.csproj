@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E45213FB-68E5-4F1E-BE27-494CE2AB5384}</ProjectGuid>
+    <ProjectGuid>{63C14755-675E-4278-9DEF-DDACA12F52B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain.Interfaces</RootNamespace>
-    <AssemblyName>Domain.Interfaces</AssemblyName>
+    <RootNamespace>Infraestructure.UnitTests</RootNamespace>
+    <AssemblyName>Infraestructure.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,20 +40,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IEntityRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Criteria\Domain.Criteria.csproj">
       <Project>{a8a486ba-b414-4a06-a29d-932032b14c32}</Project>
       <Name>Domain.Criteria</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.Interfaces\Domain.Interfaces.csproj">
+      <Project>{e45213fb-68e5-4f1e-be27-494ce2ab5384}</Project>
+      <Name>Domain.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Models\Domain.Models.csproj">
       <Project>{0abff752-bb92-4886-be07-adc41e712bc4}</Project>
       <Name>Domain.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business\" />
+    <ProjectReference Include="..\Infrastructure.Data\Infrastructure.Data.csproj">
+      <Project>{be02a3fe-2d81-4817-a368-4ca7c2826a77}</Project>
+      <Name>Infrastructure.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

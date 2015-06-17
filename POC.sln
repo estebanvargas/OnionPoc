@@ -17,6 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Data", "Infr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Interfaces", "Domain.Interfaces\Domain.Interfaces.csproj", "{E45213FB-68E5-4F1E-BE27-494CE2AB5384}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E7B2ED0E-26B7-4652-8D97-155CA0234F39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{CBB921E6-BB4F-49C5-AFC6-EBC344D46BD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.UnitTests", "Domain.UnitTests\Domain.UnitTests.csproj", "{FF8ACB16-93D4-48FD-9B50-7CB8676E3D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructure.UnitTests", "Infraestructure.UnitTests\Infraestructure.UnitTests.csproj", "{63C14755-675E-4278-9DEF-DDACA12F52B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +51,14 @@ Global
 		{E45213FB-68E5-4F1E-BE27-494CE2AB5384}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E45213FB-68E5-4F1E-BE27-494CE2AB5384}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E45213FB-68E5-4F1E-BE27-494CE2AB5384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8ACB16-93D4-48FD-9B50-7CB8676E3D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8ACB16-93D4-48FD-9B50-7CB8676E3D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8ACB16-93D4-48FD-9B50-7CB8676E3D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8ACB16-93D4-48FD-9B50-7CB8676E3D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C14755-675E-4278-9DEF-DDACA12F52B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C14755-675E-4278-9DEF-DDACA12F52B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C14755-675E-4278-9DEF-DDACA12F52B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C14755-675E-4278-9DEF-DDACA12F52B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +69,11 @@ Global
 		{0ABFF752-BB92-4886-BE07-ADC41E712BC4} = {807DF3D0-8FCE-4BEE-8392-99A8E7CCEDE8}
 		{BE02A3FE-2D81-4817-A368-4CA7C2826A77} = {2B05B079-570D-4D7D-ABBC-6049E65B8BB9}
 		{E45213FB-68E5-4F1E-BE27-494CE2AB5384} = {807DF3D0-8FCE-4BEE-8392-99A8E7CCEDE8}
+		{CBB921E6-BB4F-49C5-AFC6-EBC344D46BD4} = {E7B2ED0E-26B7-4652-8D97-155CA0234F39}
+		{FF8ACB16-93D4-48FD-9B50-7CB8676E3D17} = {CBB921E6-BB4F-49C5-AFC6-EBC344D46BD4}
+		{63C14755-675E-4278-9DEF-DDACA12F52B3} = {CBB921E6-BB4F-49C5-AFC6-EBC344D46BD4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal
