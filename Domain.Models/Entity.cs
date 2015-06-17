@@ -2,8 +2,12 @@
 
 namespace Domain.Models
 {
-    public class Entity 
+
+    [Serializable]
+    public class Entity
     {
+        public long Id { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public int ClosePeriodId { get; set; }
         public int DefinitionId { get; set; }
@@ -18,3 +22,4 @@ namespace Domain.Models
         public string RowVersion { get; set; }
     }
 }
+

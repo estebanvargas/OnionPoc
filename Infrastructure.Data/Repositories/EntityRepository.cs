@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Domain.Criteria;
 using Domain.Interfaces.Repositories;
+using Domain.Interfaces;
 using Infrastructure.Data.Entities;
 using Trintech.Cadency.DataAccess.Core;
 using Trintech.Cadency.Utility;
