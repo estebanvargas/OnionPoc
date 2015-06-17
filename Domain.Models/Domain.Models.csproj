@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitityOldVersion\BaseDTO.cs" />
+    <Compile Include="EntitityOldVersion\Entity.cs" />
+    <Compile Include="EntitityOldVersion\PublishingSourceEnum.cs" />
+    <Compile Include="EntitityOldVersion\Record.cs" />
+    <Compile Include="EntitityOldVersion\RecordStatusEnum.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
