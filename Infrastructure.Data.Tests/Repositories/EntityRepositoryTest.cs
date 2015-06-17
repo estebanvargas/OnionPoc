@@ -61,18 +61,18 @@ namespace Infrastructure.Data.Tests.Repositories
 
         private void ValidateEntities(IReadOnlyList<Domain.Models.Entity> actual, IReadOnlyList<Entities.Entity> expected)
         {
-            Assert.AreEqual(expected[0].CreatedDate, actual[0].CreatedDate, "RiskRatingsTests: Code is not equal");
-            Assert.AreEqual(expected[0].ClosePeriodId, actual[0].ClosePeriodId, "RiskRatingsTests: Description is not equal");
-            Assert.AreEqual(expected[0].DefinitionId, actual[0].DefinitionId, "RiskRatingsTests: CoreType is not equal");
-            Assert.AreEqual(expected[0].ParentId, actual[0].ParentId, "RiskRatingsTests: Material is not equal");
-            Assert.AreEqual(expected[0].PublishingSourceId, actual[0].PublishingSourceId, "RiskRatingsTests: Material is not equal");
-            Assert.AreEqual(expected[0].TaskTreeId, actual[0].TaskTreeId, "RiskRatingsTests: Material is not equal");
-            Assert.AreEqual(expected[0].CallbackParams, actual[0].CallbackParams, "RiskRatingsTests: Material is not equal");
-            Assert.AreEqual(expected[0].CallbackUrl, actual[0].CallbackUrl, "RiskRatingsTests: Material is not equal");
-            Assert.AreEqual(expected[0].Name, actual[0].Name, "RiskRatingsTests: Name is not equal");
-            Assert.AreEqual(expected[0].Number, actual[0].Number, "RiskRatingsTests: Material is not equal");
-            Assert.AreEqual(expected[0].RecordStatus, actual[0].RecordStatus, "RiskRatingsTests: Material is not equal");
-            Assert.AreEqual(expected[0].RowVersion, actual[0].RowVersion, "RiskRatingsTests: Material is not equal");
+            Assert.AreEqual(expected[0].CreatedDate, actual[0].CreatedDate, "EntityRepositoryTest: CreatedDate is not equal");
+            Assert.AreEqual(expected[0].ClosePeriodId, actual[0].ClosePeriodId, "EntityRepositoryTest: ClosePeriodId is not equal");
+            Assert.AreEqual(expected[0].DefinitionId, actual[0].DefinitionId, "EntityRepositoryTest: DefinitionId is not equal");
+            Assert.AreEqual(expected[0].ParentId, actual[0].ParentId, "EntityRepositoryTest: ParentId is not equal");
+            Assert.AreEqual(expected[0].PublishingSourceId, actual[0].PublishingSourceId, "EntityRepositoryTest: PublishingSourceId is not equal");
+            Assert.AreEqual(expected[0].TaskTreeId, actual[0].TaskTreeId, "EntityRepositoryTest: TaskTreeId is not equal");
+            Assert.AreEqual(expected[0].CallbackParams, actual[0].CallbackParams, "EntityRepositoryTest: CallbackParams is not equal");
+            Assert.AreEqual(expected[0].CallbackUrl, actual[0].CallbackUrl, "EntityRepositoryTest: CallbackUrl is not equal");
+            Assert.AreEqual(expected[0].Name, actual[0].Name, "EntityRepositoryTest: Name is not equal");
+            Assert.AreEqual(expected[0].Number, actual[0].Number, "EntityRepositoryTest: Number is not equal");
+            Assert.AreEqual(expected[0].RecordStatus, actual[0].RecordStatus, "EntityRepositoryTest: RecordStatus is not equal");
+            Assert.AreEqual(expected[0].RowVersion, actual[0].RowVersion, "EntityRepositoryTest: RowVersion is not equal");
         }
 
         private List<Entities.Entity> GivenAListOfEntities()
