@@ -10,19 +10,18 @@ using Trintech.Cadency.Utility.Exceptions;
 
 namespace Domain.Business
 {
-    public class EntitiesManager : IEntitiesManager
+    public class EntitiesManager : ManagerBase, IEntitiesManager
     {
-        private readonly ITrintechExceptionManager _exceptionManager;
         private readonly IEntityRepository _repository;
 
-        public EntitiesManager( ITrintechExceptionManager exceptionManager, IEntityRepository repository)
+        public EntitiesManager(ITrintechExceptionManager exceptionManager, IEntityRepository repository)
+            : base(exceptionManager)
         {
+            
             if (repository == null)
             {
                 throw new ArgumentNullException("repository");
             }
-
-            _exceptionManager = exceptionManager;
             _repository = repository;
         }
 

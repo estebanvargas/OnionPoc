@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Domain.Criteria;
 using Domain.Interfaces.Business;
 using Domain.Interfaces.Repositories;
@@ -18,9 +19,9 @@ namespace Domain.Business.Test
         private Mock<IEntityRepository> _mockRepository;
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void CtorNullParameter()
+        public void CtorNullRepoParameter()
         {
-            new EntitiesManager(null, null);
+            new EntitiesManager(MockExceptionManager.Object, null);
         }
 
         protected override void CustomizeTestInitialize()
@@ -58,8 +59,14 @@ namespace Domain.Business.Test
                 UserName = String.Empty
             };
             List<Entity> result = system.GetEntityList(criteria);
-            Assert.IsNotNull(result);
-            Assert.IsTrue(result.Count > 0);
+            Assert.IsNotNull(result, "result is null");
+            Assert.IsTrue(result.Count == 1, "result.Count is not 1");
+            var parent = result[0];
+            Assert.AreEqual(parent.Id, 1, "parent.id is not 1");
+            Assert.AreEqual(parent.Entities.Count(), 1, "children of parent is different than 1");
+            var child = parent.Entities.First();
+            Assert.AreEqual(child.Id, 2, "first children.id is not 2");
+
         }
 
     }
