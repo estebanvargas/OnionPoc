@@ -81,9 +81,8 @@
       <HintPath>..\packages\Trintech.Cadency.Utility.1.2.1\lib\net45\Trintech.Common.Exceptions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Trintech.TestHelpers, Version=1.1.5560.36121, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Trintech.TestHelpers.1.1.1\lib\net45\Trintech.TestHelpers.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Trintech.TestHelpers">
+      <HintPath>..\packages\Trintech.TestHelpers.1.1.4\lib\net45\Trintech.TestHelpers.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
